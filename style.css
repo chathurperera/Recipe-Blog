@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:wght@400;700&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    /* FONTS */
+    --mont:"Montserrat", sans-serif;
+    --play:"Playfair Display";
+
+    /* COLORS */
+    --gray1:#333333;
+    --gray2:#4F4F4F;
+    --gray4:#BDBDBD;
+    --orange:#F2994A;
+
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background: #fff;
+}
+
+.orange{
+        color: var(--orange) ;
+}
+
+.bold-700{
+    font-weight: 700;
+}
+
+
+.container{
+    width: 80%;
+    margin: 2em auto;
+
+}
+.main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+
+/* -----HEADER SECTION----- */
+
+.header-title{
+    font-family: var(--play);
+    font-weight: 700;
+    font-size: 24px;
+}
+.header-paragraph{
+    display: flex; 
+    font-family: var(--mont);
+    font-style: italic;
+    margin: 1em 0em;
+    width: 60%;
+}
+
+.header-img{
+    width: 100%;
+    height: auto;
+    margin: .5em 0em;
+}
+
+
+/* -----PREP SECTION----- */
+
+.prep-section{
+    margin: .5em auto;
+    display: flex;
+    flex-direction: column;
+    grid-column: 2/3;
+    padding: 2em 1em;
+    width: 200px;
+    height: 300px;
+    box-shadow:  0px 0px 20px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    border-radius: 12px;
+}
+.one{
+    grid-column: 1/4;
+}
+.prep-time{
+    margin: 1em auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    
+}
+.prep-time-content{
+
+    font-size: 11px;
+    font-family: var(--mont);
+
+}
+.prep-time-para-top{
+    color: var(--gray4);
+    text-transform: uppercase;
+}
+.prep-time-para-btm{
+    color: var(--gray1);
+}
+
+
+/* -----INGREDIENTS----- */
+
+.ingredients{
+    /* margin-top: 2em; */
+    grid-row: 1/2;
+}
+.ingredients-title{
+    font-family: var(--play);
+    margin: .5em 0em;
+}
+.main-ingredients{
+    margin: 1em 0em;
+}
+.main-ingredients-title{
+    font-family: var(--play);
+    font-style: italic;
+    font-weight: 400;
+    margin: 1em 0em;
+}
+.ingredient-item{
+    display: flex;
+    margin: .5em 0em;
+}
+.ingredient-item label{
+    font-family: var(--mont);
+}
+.item-checkbox{
+    margin-right: .5em;
+}
+
+
+/* -----INSTRUCTIONS----- */
+
+.instructions-section{
+    margin: 1em 0em;
+}
+.instructions-title{
+    font-family: var(--play);
+    margin-bottom: 1em;
+}
+.instructions-list{
+    counter-reset: number_item;
+    list-style: none;
+}
+.instructions-list-item{
+    counter-increment: number_item;
+    font-family: var(--mont);
+    font-weight: 400;
+    font-size: 16px;
+    display: grid;
+	grid-template-columns: 36px 1fr;
+	grid-gap: 15px;
+    margin-bottom: 26px;
+
+   
+}
+.instructions-list-item::before{
+    background: var(--orange); 
+    content: counter(number_item);
+    font-family: var(--play);
+    /* padding: .5em; */
+    width: 36px;
+	height: 36px;
+    text-align: center;
+    border-radius: 6px;
+    font-size: 24px;
+    display: inline-block;
+    color: #fff;
+
+}
+@media (max-width:780px){
+    .header-paragraph{
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width:480px){
+    .main{
+        display: block;
+    }
+    .prep-section{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        box-shadow: none;
+        padding: 0;
+        height: 100px;
+    }
+    .prep-time{
+        margin: 0;
+    }
+
+}
